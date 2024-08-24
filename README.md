@@ -1,4 +1,4 @@
-# RPA_APP
+# Henrique-Pincelli_Thoughtful-Challenge
 ## Description
 This project contains a Flask application used for Robotic Process Automation (RPA). The main focus of this application is extracting data from Aljazeera and sending reports via email if the user wants it.
 

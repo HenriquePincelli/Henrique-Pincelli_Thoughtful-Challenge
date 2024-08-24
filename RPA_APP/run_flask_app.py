@@ -5,7 +5,7 @@ from RPA_APP.sql.models import AljazeeraModel
 from RPA_APP.rpa.procedures import RPAAljazeera
 from RPA_APP.rpa.services.aljazeera_service import AljazeeraService
 from RPA_APP.config import SQLALCHEMY_DATABASE_URI, SQLALCHEMY_TRACK_MODIFICATIONS
-# from RPA_APP.payloads import EMAIL_ALJAZEERA, SERCH_PHRASE_ALJAZEERA, SHOW_MORE_ALJAZEERA
+from RPA_APP.payloads import EMAIL_ALJAZEERA, SERCH_PHRASE_ALJAZEERA, SHOW_MORE_ALJAZEERA
 
 
 def create_app(testing=False):
@@ -38,22 +38,22 @@ def rpa_procedures():
     # >>>>>>>>>Aljazeeras's RPA>>>>>>>>>
     service_aljazeera = AljazeeraService()
     # >>>>>>>>>Setting Aljazeera's RPA variables>>>>>>>>>
-    print("=-=" * 24)
-    print("=-==-= Parameter's for Aljazeera's RPA =-==-=")
-    # email = EMAIL_ALJAZEERA
-    # search_phrase = SERCH_PHRASE_ALJAZEERA
-    # show_more = SHOW_MORE_ALJAZEERA
+    # print("=-=" * 24)
+    # print("=-==-= Parameter's for Aljazeera's RPA =-==-=")
+    email = EMAIL_ALJAZEERA
+    search_phrase = SERCH_PHRASE_ALJAZEERA
+    show_more = SHOW_MORE_ALJAZEERA
     # email = os.getenv("EMAIL_ALJAZEERA", "pincellihenrique9@gmail.com")
     # search_phrase = os.getenv("SEARCH_PHRASE_ALJAZEERA", "AI")
     # show_more = os.getenv("SHOW_MORE_ALJAZEERA", 9)
-    send_email = service_aljazeera.get_valid_send_email()
-    if send_email:
-        email = service_aljazeera.get_valid_email()
-    else:
-        email = None
-    search_phrase = service_aljazeera.get_valid_search_phrase()
-    show_more = service_aljazeera.get_valid_show_more()
-    print("=-=" * 24)
+    # send_email = service_aljazeera.get_valid_send_email()
+    # if send_email:
+    #     email = service_aljazeera.get_valid_email()
+    # else:
+    #     email = None
+    # search_phrase = service_aljazeera.get_valid_search_phrase()
+    # show_more = service_aljazeera.get_valid_show_more()
+    # print("=-=" * 24)
     # <<<<<<<<<Setting Aljazeera's RPA variables<<<<<<<<<
 
     # >>>>>>>>>RPA's Procedure>>>>>>>>>

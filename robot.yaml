@@ -1,0 +1,11 @@
+tasks:
+  Run-Flask-App:
+    actions:
+      - python: RPA_APP/run_flask_app.py
+    variables:
+      EMAIL: "pincellihenrique9@gmail.com"
+      SEARCH_PHRASE: "BRAZIL"
+      SHOW_MORE: 9
+
+schedule:
+  frequency: "0 0 * * *"  # Run daily at midnight

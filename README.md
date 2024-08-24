@@ -8,17 +8,16 @@ Follow the steps below to clone the repository, install the dependencies, and se
 Prerequisites
 Python 3.12.3 or higher
 pip installed
-Installation Steps
 Clone the repository
 
-Install the dependencies listed in the requirements.txt file by running:
+Install the dependencies listed in the requirements.txt file by running: 
 pip install -r requirements.txt
 
-To install the project in development mode (editable mode), run:
+To install the project in development mode (editable mode), run: 
 pip install -e .
 
 How to run the project
-After installing the dependencies, you can run the project directly using the following command:
+After installing the dependencies, you can run the project directly using the following command: 
 python RPA_APP/run_flask_app.py
 
 This will start the Flask application and initiate the automated RPA procedures within the project.

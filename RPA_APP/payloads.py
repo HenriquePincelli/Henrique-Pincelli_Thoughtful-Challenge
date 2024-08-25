@@ -1,5 +1,5 @@
 # >>>>>>>>>RPA ALJAZEERA CONFIGS>>>>>>>>>
-EMAIL_ALJAZEERA = "rickpincelli@gmail.com"
+EMAIL_ALJAZEERA = "pincellihenrique9@gmail.com"
 SERCH_PHRASE_ALJAZEERA = "AI"
 SHOW_MORE_ALJAZEERA = 9
 # <<<<<<<<<RPA ALJAZEERA CONFIGS<<<<<<<<<

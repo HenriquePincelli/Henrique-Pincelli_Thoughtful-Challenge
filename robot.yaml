@@ -1,5 +1,5 @@
 tasks:
-  Aljazeera's BOT:
+  BOT-Aljazeera:
     actions:
       - python: RPA_APP/run_flask_app.py
     variables:
@@ -8,4 +8,7 @@ tasks:
       SHOW_MORE: 9
 
 schedule:
-  frequency: "0 0 * * *"  # Run daily at midnight
+  frequency: "0 0 * * *"  # Run daily at 00:00
+
+pip:
+  - requirements.txt

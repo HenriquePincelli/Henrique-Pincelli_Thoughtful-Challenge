@@ -40,12 +40,12 @@ def rpa_procedures():
     # >>>>>>>>>Setting Aljazeera's RPA variables>>>>>>>>>
     # print("=-=" * 24)
     # print("=-==-= Parameter's for Aljazeera's RPA =-==-=")
-    email = EMAIL_ALJAZEERA
-    search_phrase = SERCH_PHRASE_ALJAZEERA
-    show_more = SHOW_MORE_ALJAZEERA
-    # email = os.getenv("EMAIL_ALJAZEERA", "pincellihenrique9@gmail.com")
-    # search_phrase = os.getenv("SEARCH_PHRASE_ALJAZEERA", "RPA")
-    # show_more = os.getenv("SHOW_MORE_ALJAZEERA", 9)
+    # email = EMAIL_ALJAZEERA
+    # search_phrase = SERCH_PHRASE_ALJAZEERA
+    # show_more = SHOW_MORE_ALJAZEERA
+    email = os.getenv("EMAIL_ALJAZEERA", "pincellihenrique9@gmail.com")
+    search_phrase = os.getenv("SEARCH_PHRASE_ALJAZEERA", "RPA")
+    show_more = os.getenv("SHOW_MORE_ALJAZEERA", 9)
     # send_email = service_aljazeera.get_valid_send_email()
     # if send_email:
     #     email = service_aljazeera.get_valid_email()

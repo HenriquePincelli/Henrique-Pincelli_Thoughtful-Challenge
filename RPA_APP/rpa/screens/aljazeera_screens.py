@@ -1,6 +1,7 @@
 from RPA_APP.rpa.services.service import Service
 from RPA_APP.rpa.services.aljazeera_service import AljazeeraService
 from botcity.web import By
+from time import sleep
 import json
 import sys
 
@@ -80,6 +81,9 @@ class AljazeeraScreensService(Service):
             # Define how many times "Show more" button will be clicked
             show_more = payload["show_more"] if payload["show_more"] <= total_results else total_results - 1
             for h in range(show_more):
+                sleep(1)
+                if total_results != int(bot["bot"].find_element(f"//span[@class='search-summary__query']", By.XPATH, waiting_time=10000).text.split(" ")[1]) // 10:
+                    break
                 # "Show more" button click
                 bot = self.xpath_elements_click(bot=bot["bot"], father_name="button", son_name="class", son_content="show-more-button grid-full-width", scroll=True, maximum_attempts=450)
                 if not bot["status"]:

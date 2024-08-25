@@ -9,5 +9,7 @@ tasks:
     artifacts:
       - output/news_excel/aljazeera/aljazeera_news.xlsx
 
+artifactsDir: output/news_excel/aljazeera
+
 pip:
   - requirements.txt

@@ -6,9 +6,8 @@ tasks:
       EMAIL: "pincellihenrique9@gmail.com"
       SEARCH_PHRASE: "BRAZIL"
       SHOW_MORE: 9
-
-schedule:
-  frequency: "0 0 * * *"  # Run daily at 00:00
+    artifacts:
+      - output/news_excel/aljazeera/aljazeera_news.xlsx
 
 pip:
   - requirements.txt

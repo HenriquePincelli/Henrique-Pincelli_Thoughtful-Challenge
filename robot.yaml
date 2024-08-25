@@ -1,8 +1,8 @@
 tasks:
   BOT-Aljazeera:
-    command:
-      - python
-      - RPA_APP/run_flask_app.py
+    shell: |
+      export PYTHONPATH=$PYTHONPATH:$(pwd)
+      python RPA_APP/run_flask_app.py
     variables:
       EMAIL: "pincellihenrique9@gmail.com"
       SEARCH_PHRASE: "BRAZIL"

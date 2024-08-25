@@ -8,6 +8,11 @@ from RPA_APP.config import SQLALCHEMY_DATABASE_URI, SQLALCHEMY_TRACK_MODIFICATIO
 from RPA_APP.payloads import EMAIL_ALJAZEERA, SERCH_PHRASE_ALJAZEERA, SHOW_MORE_ALJAZEERA
 
 
+print("=-=" * 12)
+print("Running 'run_flask_app.py'.........")
+print("=-=" * 12)
+
+
 def create_app(testing=False):
     """Application factory, used to create application"""
 

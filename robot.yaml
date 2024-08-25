@@ -1,7 +1,7 @@
 tasks:
   BOT-Aljazeera:
     shell: |
-      set PYTHONPATH=%PYTHONPATH%;%cd%
+      python -c "import os; import sys; sys.path.append(os.getcwd())"
       python RPA_APP/run_flask_app.py
     variables:
       EMAIL: "pincellihenrique9@gmail.com"

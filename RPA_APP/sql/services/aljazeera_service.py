@@ -175,7 +175,7 @@ class AljazeeraDatabaseService(Service):
             file_path = os.path.join(directory, excel_filename)
             wb.save(file_path)
             # <<<<<<<<<Save the file to the specified path<<<<<<<<<
-            return {"status": True, "data": items}
+            return {"status": True}
         except Exception as e:
             # >>>>>>>>>Tracing the Error>>>>>>>>>
             exc_type, exc_value, exc_traceback = sys.exc_info()

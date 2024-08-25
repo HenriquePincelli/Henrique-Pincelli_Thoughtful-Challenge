@@ -8,9 +8,9 @@ tasks:
       SEARCH_PHRASE: "BRAZIL"
       SHOW_MORE: 9
     artifacts:
-      - output/news_excel/aljazeera/aljazeera_news.xlsx
+      - output/aljazeera_news.xlsx
 
-artifactsDir: output/news_excel/aljazeera
+artifactsDir: output/
 
 pip:
   - requirements.txt

@@ -41,12 +41,12 @@ class RPAAljazeera:
                 return {"status": False, "msg": return_database["msg"]}
             # <<<<<<<<<Save Aljazeera news data in DataBase<<<<<<<<<
 
-            # >>>>>>>>>Save Aljazeera data in 'output/news_excel/aljazeera/aljazeera_news.xlsx'>>>>>>>>>
-            print("Saving Aljazeera data in 'output/news_excel/aljazeera/aljazeera_news.xlsx'.........")
+            # >>>>>>>>>Save Aljazeera data in 'output/aljazeera_news.xlsx'>>>>>>>>>
+            print("Saving Aljazeera data in 'output/aljazeera_news.xlsx'.........")
             return_excel = service.aljazeera_excel_file()
             if not return_excel["status"]:
                 return {"status": False, "msg": return_excel["msg"]}
-            # <<<<<<<<<Save Aljazeera data in 'output/news_excel/aljazeera/aljazeera_news.xlsx'<<<<<<<<<
+            # <<<<<<<<<Save Aljazeera data in 'output/aljazeera_news.xlsx'<<<<<<<<<
 
             # >>>>>>>>>Send excel file by email>>>>>>>>>
             if payload["email"] is not None:

@@ -21,8 +21,7 @@ money_patterns = [
 ]
 # <<<<<<<<<Money patterns for regex<<<<<<<<<
 # >>>>>>>>>Destiny directory for news images>>>>>>>>>
-directory_news_aljazeera = "output/news_images/aljazeera"
-directory_news_excel = "output/news_excel/aljazeera"
+directory = "output/"
 excel_filename = "aljazeera_news.xlsx"
 # <<<<<<<<<Destiny directory for news images<<<<<<<<<
 
@@ -45,7 +44,7 @@ class AljazeeraDatabaseService(Service):
                     # >>>>>>>>>Check if the image from the item have been downloaded correctly>>>>>>>>>
                     if item is not None:
                         if not item.picture_saved:
-                            item.picture_saved = True if self.store_picture(directory=directory_news_aljazeera, id=item.id_aljazeera, url=h[4] if len(h) > 3 else h[2]) else False
+                            item.picture_saved = True if self.store_picture(directory=directory, id=item.id_aljazeera, url=h[4] if len(h) > 3 else h[2]) else False
                         continue
                     # <<<<<<<<<Check if the image from the item have been downloaded correctly<<<<<<<<<
 
@@ -68,7 +67,7 @@ class AljazeeraDatabaseService(Service):
                     aljazeera.description = h[1]
                     aljazeera.picture_filename = filename
                     aljazeera.picture_url = h[4] if len(h) > 3 else h[2]
-                    aljazeera.picture_saved = True if self.store_picture(directory=directory_news_aljazeera, id=str(id_aljazeera), url=h[4] if len(h) > 3 else h[2]) else False
+                    aljazeera.picture_saved = True if self.store_picture(directory=directory, id=str(id_aljazeera), url=h[4] if len(h) > 3 else h[2]) else False
                     aljazeera.count_search_phrase = h[0].upper().count(payload["search_phrase"].upper()) + h[1].upper().count(payload["search_phrase"].upper()) # Count of "search_phrase" in the title and description
                     aljazeera.money = True if any(re.search(pattern, h[0]) for pattern in money_patterns) or any(re.search(pattern, h[1]) for pattern in money_patterns) else False
                     aljazeera.dt_insert = datetime.now(pytz.timezone("America/Sao_Paulo"))
@@ -169,11 +168,11 @@ class AljazeeraDatabaseService(Service):
             # <<<<<<<<<Auto-adjust column widths based on content<<<<<<<<<
 
             # >>>>>>>>>Check if directory exists, otherwise create>>>>>>>>>
-            os.makedirs(directory_news_excel, exist_ok=True)
+            os.makedirs(directory, exist_ok=True)
             # <<<<<<<<<Check if directory exists, otherwise create<<<<<<<<<
 
             # >>>>>>>>>Save the file to the specified path>>>>>>>>>
-            file_path = os.path.join(directory_news_excel, excel_filename)
+            file_path = os.path.join(directory, excel_filename)
             wb.save(file_path)
             # <<<<<<<<<Save the file to the specified path<<<<<<<<<
             return {"status": True, "data": items}
@@ -197,7 +196,7 @@ class AljazeeraDatabaseService(Service):
     # >>>>>>>>>Send aljazeera excel by email>>>>>>>>>
     def aljazeera_excel_email(self, email):
         try:
-            self.excel_by_email(os.path.join(directory_news_excel, excel_filename), email, "Aljazeera Excel")
+            self.excel_by_email(os.path.join(directory, excel_filename), email, "Aljazeera Excel")
             return {"status": True}
         except Exception as e:
             # >>>>>>>>>Tracing the Error>>>>>>>>>

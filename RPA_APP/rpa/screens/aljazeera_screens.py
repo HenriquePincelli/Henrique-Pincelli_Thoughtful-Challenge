@@ -78,6 +78,8 @@ class AljazeeraScreensService(Service):
             # >>>>>>>>>Load all news to be extracted>>>>>>>>>
             # Get the total of possible results
             total_results = int(bot["bot"].find_element(f"//span[@class='search-summary__query']", By.XPATH, waiting_time=10000).text.split(" ")[1]) // 10
+            if total_results == 0:
+                return {"status": False, "msg": "No result for 'search_phrase'.", "bot": bot}
             # Define how many times "Show more" button will be clicked
             show_more = payload["show_more"] if payload["show_more"] <= total_results else total_results - 1
             for h in range(show_more):

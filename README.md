@@ -19,4 +19,6 @@ Follow the steps below to clone the repository, install the dependencies, and se
 ## After installing the dependencies, you can run the project directly using the following command: 
 ```python RPA_APP/run_flask_app.py```
 
+Notice: You can change the parameters before running the application in "RPA_APP/payloads.py"
+
 This will start the Flask application and initiate the automated RPA procedures within the project.
